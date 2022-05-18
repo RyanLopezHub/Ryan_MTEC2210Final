@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     void SpawnAlien()
     {
         int index = Random.Range(0, alienSpawnPoints.Length);
-        Vector2 spawnPos = alienSpawnPoints[index].position;
+        Vector3 spawnPos = alienSpawnPoints[index].position;
 
         GameObject alien = Instantiate(alienPrefab, spawnPos, Quaternion.identity);
 
