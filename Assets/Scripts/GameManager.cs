@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public Transform[] enemySpawnPoints;
+    public GameObject alienPrefab;
+    public Transform[] alienSpawnPoints;
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy();
+        SpawnAlien();
     }
 
     // Update is called once per frame
@@ -18,15 +18,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void SpawnEnemy()
+    void SpawnAlien()
     {
-        int index = Random.Range(0, enemySpawnPoints.Length);
-        Vector3 spawnPos = enemySpawnPoints[index].position;
-        
-        GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        int index = Random.Range(0, alienSpawnPoints.Length);
+        Vector2 spawnPos = alienSpawnPoints[index].position;
 
-        enemy.GetComponent<EnemyMovement>().speed = Random.Range(3.0f, 6.0f);
+        GameObject alien = Instantiate(alienPrefab, spawnPos, Quaternion.identity);
 
-        
+        alien.GetComponent<AlienMovement>().speed = Random.Range(3.0f, 5.0f);
     }
 }
