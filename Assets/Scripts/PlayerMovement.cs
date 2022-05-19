@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float speed = 8.0f;
+    public float speed = 4.0f;
 
     
 
@@ -19,14 +19,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xMove = Input.GetAxisRaw("Horizontal");
+        //PLAYER MOVEMENT
+        float xMove = Input.GetAxisRaw("Horizontal"); //player moves across x axis
 
         float xMovement = xMove * speed * Time.deltaTime;
 
         transform.Translate(xMovement, 0, 0);
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //if player is hit by enemy, scene resets
     {
         if (collision.gameObject.tag == "Enemy")
         {

@@ -22,7 +22,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Border")
+        if (collision.gameObject.tag == "Border")  // if the aliens get passed player, game is over and resets.
         {
             Debug.Log("Game Over");
             string currentSceneName = SceneManager.GetActiveScene().name;

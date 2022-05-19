@@ -30,9 +30,9 @@ public class Bullet : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            Score.scoreAmount += 1;
+            Score.scoreAmount += 1; // every elimination adds +1 point
             Destroy(other.gameObject);
-            Vector3 enemyRespawnPosition = new Vector3(Random.Range(-8,8), 6, 0); //spawns in enememies along xaxis
+            Vector3 enemyRespawnPosition = new Vector3(Random.Range(-8,8), 6, 0); //spawns in enememies along x axis
             Vector3 enemyRespawnPosition2 = new Vector3(Random.Range(-4, 4), 6, 0);
             Instantiate(enemyRespawnPrefab, enemyRespawnPosition, Quaternion.identity);
             Instantiate(enemyRespawnPrefab2, enemyRespawnPosition2, Quaternion.identity);
