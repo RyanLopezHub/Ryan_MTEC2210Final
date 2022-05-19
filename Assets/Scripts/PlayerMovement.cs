@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 5.0f;
-
+    
 
     // Update is called once per frame
     void Update()
@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
         float xMovement = xMove * speed * Time.deltaTime;
 
         transform.Translate(xMovement, 0, 0);
-
 
 
 

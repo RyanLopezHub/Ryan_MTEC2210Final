@@ -1,30 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject alienPrefab;
-    public Transform[] alienSpawnPoints;
+    public TextMeshPro timerText;
+    private Timer timer;
+    
+    
+    
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        SpawnAlien();
+        timer = GetComponent<Timer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer.timerIsRunning)
+        {
+            timerText.text = timer.GetTimeForDisplay();
+        }
     }
 
-    void SpawnAlien()
-    {
-        int index = Random.Range(0, alienSpawnPoints.Length);
-        Vector3 spawnPos = alienSpawnPoints[index].position;
+    
 
-        GameObject alien = Instantiate(alienPrefab, spawnPos, Quaternion.identity);
-
-        alien.GetComponent<AlienMovement>().speed = Random.Range(3.0f, 5.0f);
-    }
 }
