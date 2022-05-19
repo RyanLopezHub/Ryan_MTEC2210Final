@@ -3,34 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class Enemy2Behavior : MonoBehaviour
 {
-
-    public float speed = 8.0f;
-
+    private Transform enemyTransform;
+    public float speed;
     
-
+    // Start is called before the first frame update
     void Start()
     {
-        
+        enemyTransform = GetComponent<Transform>();
     }
-
 
     // Update is called once per frame
     void Update()
     {
-        float xMove = Input.GetAxisRaw("Horizontal");
-
-        float xMovement = xMove * speed * Time.deltaTime;
-
-        transform.Translate(xMovement, 0, 0);
-
+        enemyTransform.position += Vector3.down * speed;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Border")
         {
-            Debug.Log("Player has died");
+            Debug.Log("Game Over");
             string currentSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(currentSceneName);
         }

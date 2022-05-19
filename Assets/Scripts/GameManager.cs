@@ -8,11 +8,7 @@ public class GameManager : MonoBehaviour
     public TextMeshPro timerText;
     private Timer timer;
     
-    
-    
-    
-    
-    
+       
     // Start is called before the first frame update
     void Start()
     {

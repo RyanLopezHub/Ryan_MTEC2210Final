@@ -94,7 +94,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -124,3 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   timer: 3
+  enemyRespawnPrefab: {fileID: 5646762221516542984, guid: 6503ae9d0f13fdf408e802f02a344f80,
+    type: 3}
+  enemyRespawnPrefab2: {fileID: 7376436117669443486, guid: 3efd6767f4cf01c41a0ea6c416aa04a1,
+    type: 3}

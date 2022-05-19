@@ -1,35 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public int scoreValue;
-    private TextMeshProUGUI scoreCounterText;
-    
-    
-    
+    public static int scoreAmount;
+    private Text scoreText;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        scoreValue = 0;
+        scoreText = GetComponent<Text>();
+        scoreAmount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreCounterText.text = scoreValue.ToString();
+        scoreText.text = "Score: " + scoreAmount;
     }
-
-     void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Bullet")
-        {
-            scoreValue += 10;
-        }
-    }
-
 }
